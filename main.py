@@ -1,5 +1,5 @@
 import get_wifi as wi_fi
-import get_wifi_pass as wifi_pass
+import get_wifi_pass as wifi_pass_func
 import service as serv
 
 import os
@@ -32,11 +32,11 @@ def wifi_pass(wifi_name, vers):
         win_lang=serv.get_win_lang()
 
         if win_lang=="ru_RU":
-            pass_= wifi_pass.get_pass_win("ru", wifi_name)
+            pass_= wifi_pass_func.get_pass_win("ru", wifi_name)
         else:
-            pass_= wifi_pass.get_pass_win("en", wifi_name)
+            pass_= wifi_pass_func.get_pass_win("en", wifi_name)
     if vers=="posix":
-        pass_=wifi_pass.get_pass_linux(wifi_name)
+        pass_=wifi_pass_func.get_pass_linux(wifi_name)
 
     return pass_ 
 
