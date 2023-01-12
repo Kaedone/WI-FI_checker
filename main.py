@@ -45,7 +45,17 @@ def main():
     
     
     wifi=wifi_list(os.name)
-    pass_=wifi_pass(wifi[0], os.name)
+    print('Enter the number of the network you want to get the pass to')
+    for i in range(len(wifi)):
+        print(i + 1, ')', wifi[i])
+    print('0 ) Exit')
+    num=int(input())
+    if num==0:
+        exit()
+    pass_=wifi_pass(wifi[num-1], os.name)
+    print('Name:', wifi[num-1],
+                'Password:', pass_)
+    
 
 
     
