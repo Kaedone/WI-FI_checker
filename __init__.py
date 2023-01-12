@@ -4,6 +4,7 @@ import service as serv
 
 import os
 
+import json
 
 
 
@@ -40,22 +41,27 @@ def wifi_pass(wifi_name, vers):
 
     return pass_ 
 
+def output():
+    wifi=wifi_list(os.name)
+    
+    x=json.dumps(wifi)
+    return x
         
-def main():
+def main_(id):
     
     
     wifi=wifi_list(os.name)
-    print('Enter the number of the network you want to get the pass to')
-    for i in range(len(wifi)):
-        print(i + 1, ')', wifi[i])
-    print('0 ) Exit')
-    num=int(input())
+    
+    
+    num=id
     if num==0:
         exit()
     pass_=wifi_pass(wifi[num-1], os.name)
-    print('Name:', wifi[num-1],
-                'Password:', pass_)
     
+    wifi_info={'name':wifi[num-1], 'pass':pass_}
+    x=json.dumps(wifi_info)
+
+    return x
 
 
     
