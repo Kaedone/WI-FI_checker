@@ -66,6 +66,4 @@ def main_(id):
 
     
 
-if __name__ == "__main__":
-    main()
     

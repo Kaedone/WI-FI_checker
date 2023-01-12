@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_restful import Resource, Api
 
-import main
+import __init__
 
 
 app=Flask(__name__)
